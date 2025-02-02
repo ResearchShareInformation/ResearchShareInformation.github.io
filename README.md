@@ -27,10 +27,4 @@ While there are no specific projects listed yet, this space will soon be filled 
 
 ---
 
-## **License**
-
-This project is open-source and available under the [MIT License](LICENSE). Feel free to use, modify, and distribute the content as needed.
-
----
-
 Thank you for visiting **Research Share Information**! Let’s explore the future of research and development together. 🚀
