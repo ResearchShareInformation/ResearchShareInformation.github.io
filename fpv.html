@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FPV Drone Research</title>
     <link rel="stylesheet" href="style.css">
+    <script src="drone.js" defer></script>
 </head>
 <body>
     <header>
@@ -22,111 +23,344 @@
     <main>
         <section id="introduction">
             <h2>Introduction to FPV Drones</h2>
-            <p>First-Person View (FPV) drones revolutionized aerial navigation by allowing pilots to see from the drone's perspective in real-time. 
-            This immersive technology is used in drone racing, aerial cinematography, industrial inspections, search and rescue, and autonomous systems.</p>
+            <p>First-Person View (FPV) drones revolutionize aerial navigation by providing pilots with a real-time view from the drone’s perspective. This immersive technology powers applications like drone racing, aerial cinematography, industrial inspections, search and rescue, and autonomous systems. FPV drones combine advanced hardware, software, and mechanical design to deliver high-performance flight and video capabilities.</p>
         </section>
 
         <section id="design-cycle">
             <h2>Engineering Design Cycle for FPV Drones</h2>
-            <p>The FPV drone development follows a structured engineering design cycle:</p>
+            <p>The development of FPV drones follows a structured engineering design process, ensuring innovative, reliable, and efficient systems. This cycle is adapted from TeachEngineering.org and tailored to FPV drone development:</p>
             <ul>
-                <li><strong>Ask:</strong> Define objectives, constraints, and technical requirements.</li>
-                <li><strong>Research:</strong> Study existing drone designs, components, and user needs.</li>
-                <li><strong>Imagine:</strong> Brainstorm innovative features and design possibilities.</li>
-                <li><strong>Plan:</strong> Develop a workflow including component selection and assembly.</li>
-                <li><strong>Create:</strong> Build and assemble the drone.</li>
-                <li><strong>Test:</strong> Evaluate performance under various flight conditions.</li>
-                <li><strong>Improve:</strong> Optimize components and enhance efficiency.</li>
+                <li><strong>Ask:</strong> Define project objectives (e.g., speed for racing, range for inspections), requirements (e.g., lightweight frame, low-latency video), and constraints (e.g., budget, regulations). Ask questions to understand the purpose and scope of the FPV drone project.</li>
+                <li><strong>Research:</strong> Conduct thorough research on existing FPV drone designs, components (e.g., carbon fiber frames, LiPo batteries), and technologies (e.g., 5.8 GHz VTX). Explore user preferences and technological advancements like ExpressLRS for long-range control.</li>
+                <li><strong>Imagine:</strong> Brainstorm and conceptualize innovative designs and features (e.g., autonomous flight, modular frames, enhanced OSD). Foster creativity and explore possibilities to meet project objectives, thinking outside the box.</li>
+                <li><strong>Plan:</strong> Develop a detailed plan outlining tasks (e.g., component sourcing), timelines (e.g., prototype by week 6), and resources (e.g., CAD tools, 3D printers). Define milestones and allocate responsibilities accordingly.</li>
+                <li><strong>Create:</strong> Bring the design to life by assembling components, fabricating parts (e.g., frames via CNC), and building the FPV drone according to planned specifications. Utilize engineering principles to ensure quality and reliability.</li>
+                <li><strong>Test:</strong> Conduct comprehensive field tests to evaluate performance (e.g., speed, range), functionality (e.g., video feed clarity), and safety (e.g., fail-safes) under various operating conditions.</li>
+                <li><strong>Improve:</strong> Analyze test results and user feedback to identify areas for improvement. Iteratively refine the design, components, and operational procedures to enhance performance, reliability, and user satisfaction.</li>
+            </ul>
+            <h3>Resources for the Engineering Design Cycle</h3>
+            <ul>
+                <li>Broadcom Engineering Design Process</li>
+                <li>Engineering Design Process Video</li>
+                <li>Crash Course</li>
+                <li>MIT Engineering Process</li>
+            </ul>
+        </section>
+
+        <section id="system-design">
+            <h2>System Design Overview</h2>
+            <p>FPV drone system design integrates three main aspects:</p>
+            <ul>
+                <li><strong>Specification:</strong> Requirement specification is essential, involving collecting and documenting system needs. Key documents include:</li>
+                <ul>
+                    <li><strong>Product Requirement Document (PRD):</strong> Outlines goals and scope, with input from marketing (market research), customers (feedback), and engineering (technical feasibility).</li>
+                    <li><strong>System Requirement Document (SRD):</strong> Focuses on detailed specifications for engineers to guide the design process.</li>
+                </ul>
+                <li><strong>Architecture:</strong> Combines mechanical (e.g., X-frame), hardware (e.g., PCBA with SOC), and software (e.g., RTOS for real-time control) designs. Design documents ensure alignment across teams and customers.</li>
+                <li><strong>Implementation:</strong> Engineers focus ideas into a detailed plan, build a prototype, test it, and make improvements.</li>
+            </ul>
+
+            <h3>Mechanical Design Details</h3>
+            <p>Mechanical design focuses on mass-producible products, using CAD tools and 3D printing for precision and iteration:</p>
+            <ul>
+                <li>CAD Tools and Outputs</li>
+                <li>Integration with Electrical Components</li>
+                <li>Importance of Precision</li>
+                <li>Aesthetics and Iteration</li>
+                <li>Impact of 3D Printing</li>
+            </ul>
+            <p>Example: A drone with a hyperspectral camera can monitor crops but requires specific equipment for soil analysis or spraying.</p>
+
+            <h3>Hardware Design Details</h3>
+            <p>Hardware design connects components to a System-on-Chip (SOC) via a Printed Circuit Board Assembly (PCBA):</p>
+            <ul>
+                <li><strong>Schematics Design:</strong> Detailed electrical connections (power, ground, signals) following guidelines.</li>
+                <li><strong>Design Rules Checking (DRC):</strong> Ensures compliance with electrical/physical rules, verified via simulation.</li>
+                <li><strong>Netlist Generation:</strong> Outlines component connections for main board, daughterboard, and flex PCB.</li>
+                <li><strong>PCBA Design Considerations:</strong> Dimension (mm), PCB type (rigid, flex, hybrid), layer stack-up (e.g., 3-6-3 with micro/buried vias).</li>
+            </ul>
+            <p>Hardware requirements vary by performance level (low-end, mid-range, high-end) based on power, latency, and durability.</p>
+
+            <h3>Software Design Details</h3>
+            <p>Software design partitions functionality and follows a development lifecycle:</p>
+            <ul>
+                <li><strong>Real-Time Systems:</strong> Respond within set times using RTOS, prioritizing interrupts and synchronizing tasks with semaphores.</li>
+                <li><strong>Development Phases:</strong></li>
+                <ul>
+                    <li><strong>Requirements Definition:</strong> Gather and document functional/non-functional requirements.</li>
+                    <li><strong>Design:</strong> High-level (architecture) and low-level (algorithms) design using UML.</li>
+                    <li><strong>Implementation & Unit Testing:</strong> Code and test modules.</li>
+                    <li><strong>Integration & System Testing:</strong> Validate the full system (functional, performance, security).</li>
+                    <li><strong>Operation & Maintenance:</strong> Deploy, update, and monitor performance.</li>
+                </ul>
+                <li><strong>Agile Approach:</strong> Iterative sprints, collaboration, flexibility, and customer feedback (e.g., Scrum framework).</li>
             </ul>
         </section>
 
         <section id="components">
             <h2>Key FPV Drone Components & Their Functions</h2>
             <table>
-                <tr>
-                    <th>Component</th>
-                    <th>Function</th>
-                </tr>
-                <tr>
-                    <td><strong>Frame</strong></td>
-                    <td>The structural backbone that holds all components together. Common materials: Carbon fiber (lightweight & durable).</td>
-                </tr>
-                <tr>
-                    <td><strong>Motors</strong></td>
-                    <td>Provide thrust by spinning propellers. KV rating determines speed and power efficiency.</td>
-                </tr>
-                <tr>
-                    <td><strong>Electronic Speed Controllers (ESCs)</strong></td>
-                    <td>Regulate motor speeds based on flight controller signals.</td>
-                </tr>
-                <tr>
-                    <td><strong>Flight Controller</strong></td>
-                    <td>The drone’s "brain," stabilizing flight using gyroscopes & accelerometers.</td>
-                </tr>
-                <tr>
-                    <td><strong>Battery</strong></td>
-                    <td>Power source. Most FPV drones use LiPo (Lithium Polymer) batteries due to their high discharge rate.</td>
-                </tr>
-                <tr>
-                    <td><strong>FPV Camera</strong></td>
-                    <td>Captures real-time video, enabling immersive piloting.</td>
-                </tr>
-                <tr>
-                    <td><strong>Video Transmitter (VTX)</strong></td>
-                    <td>Broadcasts video signals wirelessly to FPV goggles or monitors.</td>
-                </tr>
-                <tr>
-                    <td><strong>Radio Transmitter & Receiver</strong></td>
-                    <td>Allows remote control of the drone.</td>
-                </tr>
-                <tr>
-                    <td><strong>Antennas</strong></td>
-                    <td>Enhance video and control signal transmission.</td>
-                </tr>
-                <tr>
-                    <td><strong>On-Screen Display (OSD)</strong></td>
-                    <td>Overlays flight telemetry (battery voltage, altitude, speed) onto the FPV feed.</td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Function</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Frame</strong></td>
+                        <td>Structural backbone holding all components.</td>
+                        <td>
+                            <ul>
+                                <li><strong>Materials:</strong> Carbon fiber (lightweight, durable, rigid), aluminum, plastic.</li>
+                                <li><strong>Design/Size:</strong> Single rotor, multirotor (e.g., quadcopter, hexacopter); 180-250 mm popular for freestyle.</li>
+                                <li><strong>Battery Placement:</strong> Top-mounted (inline with frame) for crash protection, or underneath.</li>
+                                <li><strong>Component Placement:</strong> Motors, ESCs, antennas, FPV camera (e.g., bottom-mounted for better view).</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Propellers</strong></td>
+                        <td>Generate thrust by spinning to lift and maneuver the drone.</td>
+                        <td>
+                            <ul>
+                                <li><strong>Functionality:</strong> Four per drone, airfoil-shaped for lift (low pressure above, high below).</li>
+                                <li><strong>Importance:</strong> Efficiency (quick direction adjustments), load capacity.</li>
+                                <li><strong>Considerations:</strong> Size (e.g., 2-5 inches), material, design.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Motors</strong></td>
+                        <td>Provide thrust via propeller rotation.</td>
+                        <td>
+                            <ul>
+                                <li><strong>Details:</strong> Four brushless motors, one per corner.</li>
+                                <li><strong>KV Rating:</strong> RPM per volt (e.g., 2205-2308 kV for 5-inch props).</li>
+                                <li><strong>Weight:</strong> Impacts flight time (heavier motors drain battery faster).</li>
+                                <li><strong>Power & Current Draw:</strong> Must match ESC capacity to avoid failure.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Electronic Speed Controllers (ESCs)</strong></td>
+                        <td>Regulate motor speeds based on flight controller signals.</td>
+                        <td>
+                            <ul>
+                                <li><strong>Function:</strong> Translate PWM signals into voltage/current adjustments.</li>
+                                <li><strong>Operation:</strong> Receive signals from flight controller, adjust motor rotation via duty cycle.</li>
+                                <li><strong>Compatibility:</strong> Must match motor power needs.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Flight Controller</strong></td>
+                        <td>The "brain" stabilizing and controlling flight.</td>
+                        <td>
+                            <ul>
+                                <li><strong>Role:</strong> Controls pitch, roll, yaw; manages stability and maneuvers.</li>
+                                <li><strong>Components:</strong> Gyroscopes (rotation), accelerometers (lateral movement), microcontroller, firmware.</li>
+                                <li><strong>Selection:</strong> Microcontrollers, processors, or FPGAs; consider integration and sensor support.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Battery</strong></td>
+                        <td>Powers all electronics and motors.</td>
+                        <td>
+                            <ul>
+                                <li><strong>Types:</strong> NiCad (older), LiPo (common, high energy density), Li-ion (computers).</li>
+                                <li><strong>LiPo Details:</strong> Rechargeable, solid polymer electrolyte, high discharge capabilities.</li>
+                                <li><strong>Selection:</strong> Cell count (e.g., 1S=3.7V), capacity (e.g., 1400 mAh), C-rating (e.g., 100C = 100*1400 mA).</li>
+                                <li><strong>Size/Weight:</strong> Impacts flight time and balance.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>FPV Camera</strong></td>
+                        <td>Captures real-time video for pilot immersion.</td>
+                        <td>
+                            <ul>
+                                <li><strong>Function:</strong> Provides live feed for navigation.</li>
+                                <li><strong>Sizes:</strong> Full, mini, micro (partial/full case), nano (soldered to VTX).</li>
+                                <li><strong>Considerations:</strong> Day/night, lens (e.g., 2.5 mm focal length), mount (bottom for better view).</li>
+                                <li><strong>Applications:</strong> Agriculture, sports, monitoring, search and rescue, cinematography.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Video Transmitter (VTX)</strong></td>
+                        <td>Transmits video signals to goggles/monitor.</td>
+                        <td>
+                            <ul>
+                                <li><strong>Role:</strong> Converts video to RF (e.g., 5.8 GHz, 25-800 mW).</li>
+                                <li><strong>ExpressLRS:</strong> 2.4 GHz, FHSS, low-latency, long-range.</li>
+                                <li><strong>SpeedyBee F405:</strong> Integrated OSD, Bluetooth, UART.</li>
+                                <li><strong>Power:</strong> Higher mW increases range but risks leakage/interference.</li>
+                                <li><strong>Modulation:</strong> Analog (FM, low latency) vs. Digital (high quality, higher latency).</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Radio Transmitter & Receiver</strong></td>
+                        <td>Enables remote control of the drone.</td>
+                        <td>
+                            <ul>
+                                <li><strong>Transmitter:</strong> Handheld, sends commands wirelessly.</li>
+                                <li><strong>Receiver:</strong> Decodes signals for flight controller; functions include decoding, real-time communication, fail-safe.</li>
+                                <li><strong>Selection:</strong> Compatibility with transmitter, sensitivity (range), noise resistance.</li>
+                                <li><strong>Issues:</strong> Poor receiver = loss of control, collision, or no takeoff.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Antennas</strong></td>
+                        <td>Enhance signal transmission/reception.</td>
+                        <td>
+                            <ul>
+                                <li><strong>Types:</strong> Duck/Dipole (linear), Skew Planar/Cloverleaf/Array (circular).</li>
+                                <li><strong>Radiation Patterns:</strong> Omnidirectional (all directions, e.g., GPS, WiFi) vs. Directional (specific direction, e.g., satellite).</li>
+                                <li><strong>Usage:</strong> VTX, receiver, goggles (e.g., one omni + one directional for dual receivers).</li>
+                                <li><strong>Gain:</strong> Higher gain = increased range, narrower coverage.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>On-Screen Display (OSD)</strong></td>
+                        <td>Overlays telemetry on video feed.</td>
+                        <td>
+                            <ul>
+                                <li><strong>Function:</strong> Displays battery voltage, altitude, speed, RSSI, arm status, flight mode.</li>
+                                <li><strong>Components:</strong> OSD module, FPV camera, VTX/receiver.</li>
+                                <li><strong>Setup:</strong> Connect to flight controller/camera, configure via Betaflight.</li>
+                                <li><strong>Challenges:</strong> Complexity, potential signal interference (mitigated by equipment and antenna placement).</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Goggles</strong></td>
+                        <td>Display live video feed to the pilot.</td>
+                        <td>Pilot uses FPV goggles or monitor to view the drone’s perspective in real-time.</td>
+                    </tr>
+                </tbody>
             </table>
         </section>
 
         <section id="technology">
             <h2>FPV Drone Technologies</h2>
             <h3>1. Video Transmission & Frequencies</h3>
-            <p>FPV drones rely on real-time video transmission. The most common frequencies are:</p>
+            <p>Real-time video is critical for FPV. Key technologies include:</p>
             <ul>
-                <li><strong>5.8 GHz:</strong> Most widely used due to high bandwidth and low interference.</li>
-                <li><strong>2.4 GHz:</strong> Offers longer range but is more susceptible to interference.</li>
-                <li><strong>1.2 GHz & 900 MHz:</strong> Used in long-range FPV systems.</li>
+                <li><strong>Frequencies:</strong> 5.8 GHz (high bandwidth, short range), 2.4 GHz (longer range, interference-prone), 1.2 GHz/900 MHz (long-range systems).</li>
+                <li><strong>Modulation:</strong>
+                    <ul>
+                        <li><strong>Analog (FM):</strong> Simple, low latency, susceptible to interference, lower quality.</li>
+                        <li><strong>Digital:</strong> High quality, interference-resistant, higher latency, requires complex hardware.</li>
+                    </ul>
+                </li>
+                <li><strong>ExpressLRS (ELRS):</strong> Open-source, 2.4 GHz protocol with FHSS for long-range, low-latency control.</li>
+                <li><strong>Power & Antennas:</strong> VTX power (25-800 mW) affects range; high power risks leakage (unintended RF emission). Antenna gain impacts signal strength and coverage.</li>
+                <li><strong>Frequency Management:</strong> Allocate bands to avoid interference, often coordinated by race organizers.</li>
             </ul>
 
             <h3>2. Flight Modes & Control Systems</h3>
-            <p>FPV drones offer multiple flight modes for different skill levels:</p>
+            <p>Flight controllers manage stability and maneuvers:</p>
             <ul>
-                <li><strong>Acro (Manual) Mode:</strong> Gives full control without self-leveling. Preferred for racing and freestyle flying.</li>
-                <li><strong>Angle Mode:</strong> Auto-leveling mode, ideal for beginners.</li>
-                <li><strong>Horizon Mode:</strong> A mix of Acro and Angle mode, allowing flips while maintaining stability.</li>
+                <li><strong>Acro Mode:</strong> Manual control, no self-leveling—ideal for racing/freestyle.</li>
+                <li><strong>Angle Mode:</strong> Auto-leveling, beginner-friendly (stabilized mode).</li>
+                <li><strong>Horizon Mode:</strong> Combines Acro flexibility with stability.</li>
+                <li><strong>Sensors:</strong> Gyroscopes (rotation), accelerometers (lateral movement) ensure precise control.</li>
             </ul>
+        </section>
+
+        <section id="hardware-development">
+            <h2>Drone Hardware Development</h2>
+            <p>Hardware development follows key phases:</p>
+            <ul>
+                <li><strong>Concept & Planning:</strong> Define requirements, conduct feasibility studies, create a project roadmap.</li>
+                <li><strong>Design & Development:</strong> Create schematics and PCB layouts, select components (e.g., SOC, sensors), simulate designs.</li>
+                <li><strong>Prototyping & Testing:</strong> Build prototypes, test performance/reliability/safety, iterate based on results.</li>
+                <li><strong>Deployment & Support:</strong> Distribute product, provide support, gather feedback for improvements.</li>
+            </ul>
+            <h3>PCB Design Process</h3>
+            <ul>
+                <li><strong>Schematic Capture:</strong> Draw circuit diagram, define connections and placement.</li>
+                <li><strong>PCB Layout:</strong> Transfer to software (e.g., Altium), set design rules (trace width, layer stack-up).</li>
+                <li><strong>Solder Mask & Silkscreen:</strong> Add protective coating and labels.</li>
+                <li><strong>Fabrication:</strong> Print/etch copper board, drill holes for components/layers.</li>
+                <li><strong>Testing:</strong> Verify functionality with tools like multimeters.</li>
+            </ul>
+            <h3>Electrical Bill of Materials (EBOM)</h3>
+            <p>Components selected based on availability, production status, cost, and operating temperature (commercial, industrial, military).</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Requirement</th>
+                        <th>Proposal</th>
+                        <th>Dependency</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>CPU</td><td>Quad-core 2.34 GHz</td><td>Quad-core 2.34 GHz</td><td>Required</td></tr>
+                    <tr><td>Memory</td><td>2GB LPDDR3</td><td>4GB LPDDR3</td><td>Required</td></tr>
+                    <tr><td>Storage</td><td>64 GB uSSD</td><td>128GB uSSD</td><td>Required</td></tr>
+                    <tr><td>Camera</td><td>600-975nm, hyperspectral</td><td>470-900nm, hyperspectral</td><td>Required</td></tr>
+                    <tr><td>WiFi</td><td>802.11ac module</td><td>M.2 16802.11ac module</td><td>Required</td></tr>
+                    <tr><td>Sensor</td><td>Accelerometer, gyroscope, etc.</td><td>Same</td><td>Required</td></tr>
+                    <tr><td>I/O Ports</td><td>USB-C, uSD4.0, uSim, PowerJack</td><td>Same</td><td>Required</td></tr>
+                    <tr><td>Mobile Network</td><td>LTE</td><td>M.2 LTE Module</td><td>Optional</td></tr>
+                    <tr><td>PCB</td><td>12-Layer HDI</td><td>8-Layer HDI</td><td>Required</td></tr>
+                    <tr><td>Power</td><td>Integrated</td><td>Integrated</td><td>Required</td></tr>
+                    <tr><td>Charger</td><td>7.4V, 5A</td><td>7.4V, 5A</td><td>Required</td></tr>
+                    <tr><td>Battery</td><td>10000mAh</td><td>10000mAh</td><td>Required</td></tr>
+                    <tr><td>DC Adapter</td><td>12V, 3A</td><td>12V, 3A</td><td>Required</td></tr>
+                </tbody>
+            </table>
         </section>
 
         <section id="applications">
             <h2>Applications of FPV Drones</h2>
             <ul>
-                <li><strong>Search and Rescue:</strong> Locate missing persons in remote locations.</li>
-                <li><strong>Medical Assistance:</strong> Deliver first-aid kits and emergency supplies.</li>
-                <li><strong>Autonomous Drones:</strong> AI-driven drones for industrial monitoring and delivery.</li>
-                <li><strong>Disaster Relief:</strong> Assess damage post-natural disasters.</li>
-                <li><strong>Aerial Cinematography:</strong> Used in film and content creation.</li>
+                <li><strong>Search and Rescue:</strong> Locate missing persons using FPV for rapid navigation in remote areas.</li>
+                <li><strong>Medical Assistance:</strong> Deliver medical supplies (e.g., first-aid kits) to inaccessible locations.</li>
+                <li><strong>Autonomous Drones:</strong> AI-driven systems for quicker, greener delivery, cutting congestion and emissions.</li>
+                <li><strong>Disaster Relief:</strong> Assess damage post-disasters (e.g., floods, earthquakes) with real-time footage.</li>
+                <li><strong>Public Safety:</strong> Aerial support in emergencies (e.g., firefighting drone deployment).</li>
+                <li><strong>Aerial Cinematography:</strong> High-quality footage for film, sports, and content creation.</li>
+            </ul>
+        </section>
+
+        <section id="future-implications">
+            <h2>Future Implications</h2>
+            <p>FPV drones are poised to transform industries with advancements in:</p>
+            <ul>
+                <li><strong>Autonomous Systems:</strong> Greener delivery via AI navigation.</li>
+                <li><strong>Disaster Management:</strong> Enhanced assessment and response capabilities.</li>
+                <li><strong>Public Safety:</strong> Real-time aerial support for emergencies.</li>
+            </ul>
+            <h3>Recommended Videos</h3>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=DOWDNBu9DkU">"This Drone Will Change Everything"</a></li>
+                <li><a href="#">"Autonomous FPV Drone"</a></li>
+                <li><a href="#">"Firefighting Drones"</a></li>
             </ul>
         </section>
 
         <section id="resources">
             <h2>References & Further Learning</h2>
             <ul>
-                <li><a href="https://www.teachengineering.org/populartopics/designprocess" target="_blank">Engineering Design Process</a></li>
-                <li><a href="https://www.sciencebuddies.org/science-fair-projects/engineering-design-process/engineering-design-process-steps" target="_blank">Science Buddies: Engineering Design</a></li>
-                <li><a href="https://oscarliang.com/fpv-drone-frames/" target="_blank">Guide to FPV Drone Frames</a></li>
-                <li><a href="https://www.youtube.com/watch?v=DOWDNBu9DkU" target="_blank">FPV Drone Technologies (YouTube)</a></li>
+                <li><a href="https://www.teachengineering.org/populartopics/designprocess">Engineering Design Process - TeachEngineering</a></li>
+                <li><a href="https://oscarliang.com/video-transmitter/">Choosing the Best VTX for FPV Drones - Oscar Liang</a></li>
+                <li><a href="https://www.expresslrs.org/software/serial-protocols/">ExpressLRS Protocol</a></li>
+                <li><a href="https://www.getfpv.com/learn/fpv-essentials/fpv-flight-modes-explained">FPV Flight Modes Explained</a></li>
+                <li><a href="https://intofpv.com/t-guide-to-fpv-drone-osd-on-screen-display">Guide to FPV Drone OSD</a></li>
+                <li><a href="https://wrekd.com/pages/a-comprehensive-guide-to-video-transmitters-vtx-for-fpv-drones">A Comprehensive Guide to VTX - WREKD Co.</a></li>
+                <li><a href="https://oscarliang.com/how-antenna-gain-affects-range/">How Antenna Gain Affects Range - Oscar Liang</a></li>
+                <li><a href="https://youtu.be/14qma6501A1M?si=DULUcgLSLVIVXYjV">Flight Controller Video Reference</a></li>
+                <li><a href="https://youtu.be/E6nsJpuaTQc?si=u9dyOlokfK61MD3J">Motor Selection Video</a></li>
+                <li><a href="https://www.getfpv.com/learn/new-to-fpv/all-about-multirotor-fpv-drone-propellers/">All About FPV Drone Propellers</a></li>
             </ul>
         </section>
     </main>

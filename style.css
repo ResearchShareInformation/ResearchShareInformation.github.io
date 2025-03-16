@@ -66,17 +66,19 @@ section p {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 1em;
+    margin: 15px 0; /* Updated from new CSS, slightly less than original 20px */
+    font-size: 0.95em; /* Slightly smaller for dense content from new CSS */
     text-align: left;
     border-radius: 8px;
-    overflow: hidden;
+    overflow: hidden; /* Keeps rounded corners clean */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 th, td {
-    padding: 12px;
+    padding: 10px; /* Updated from new CSS, reduced from original 12px */
+    text-align: left;
     border-bottom: 1px solid #ddd;
+    vertical-align: top; /* Align content at top for long lists from new CSS */
 }
 
 th {
@@ -95,6 +97,13 @@ ul {
 
 ul li {
     margin-bottom: 10px;
+}
+
+/* Nested Lists */
+section ul ul {
+    list-style-type: circle; /* Differentiate nested lists */
+    padding-left: 20px; /* Indent nested items */
+    margin: 5px 0; /* Reduced spacing for compactness */
 }
 
 /* Highlight Strong Text */
