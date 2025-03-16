@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FPV Drone Research</title>
     <link rel="stylesheet" href="style.css">
-    <script src="drone.js" defer></script>
 </head>
 <body>
     <header>
@@ -13,28 +12,125 @@
         <nav>
             <ul class="nav-list">
                 <li><a href="./">Home</a></li>
+                <li><a href="ai.html">AI Learning</a></li>
                 <li><a href="fpv.html">FPV Drone</a></li>
                 <li><a href="#applications">Applications</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="overview">
-        <h2>FPV Drone Overview</h2>
-        <p>FPV drones provide a first-person flying experience, making them popular for racing, cinematography, and various professional applications.</p>
-        <!-- Slides will be appended here by JS -->
-    </section>
-    
-    <section id="technology">
-        <h2>FPV Drone Technology</h2>
-        <p>These drones rely on advanced components like high-speed cameras, low-latency video transmission, and precise flight controllers to offer a seamless experience.</p>
-    </section>
-    
-    <section id="components">
-        <h2>FPV Drone Components</h2>
-        <p>FPV drones consist of several essential components. The frame provides structural integrity, while motors and propellers generate lift and movement. A flight controller serves as the drone’s brain, managing stability and inputs. Electronic Speed Controllers (ESCs) regulate motor speeds for precise control. The battery powers the entire system, and an FPV camera transmits live video to the pilot. A Video Transmitter (VTX) sends the video feed to goggles or monitors, while a radio transmitter and receiver enable remote control. Antennas improve signal strength for reliable communication.</p>
-    </section>
-    
+    <main>
+        <section id="introduction">
+            <h2>Introduction to FPV Drones</h2>
+            <p>First-Person View (FPV) drones revolutionized aerial navigation by allowing pilots to see from the drone's perspective in real-time. 
+            This immersive technology is used in drone racing, aerial cinematography, industrial inspections, search and rescue, and autonomous systems.</p>
+        </section>
+
+        <section id="design-cycle">
+            <h2>Engineering Design Cycle for FPV Drones</h2>
+            <p>The FPV drone development follows a structured engineering design cycle:</p>
+            <ul>
+                <li><strong>Ask:</strong> Define objectives, constraints, and technical requirements.</li>
+                <li><strong>Research:</strong> Study existing drone designs, components, and user needs.</li>
+                <li><strong>Imagine:</strong> Brainstorm innovative features and design possibilities.</li>
+                <li><strong>Plan:</strong> Develop a workflow including component selection and assembly.</li>
+                <li><strong>Create:</strong> Build and assemble the drone.</li>
+                <li><strong>Test:</strong> Evaluate performance under various flight conditions.</li>
+                <li><strong>Improve:</strong> Optimize components and enhance efficiency.</li>
+            </ul>
+        </section>
+
+        <section id="components">
+            <h2>Key FPV Drone Components & Their Functions</h2>
+            <table>
+                <tr>
+                    <th>Component</th>
+                    <th>Function</th>
+                </tr>
+                <tr>
+                    <td><strong>Frame</strong></td>
+                    <td>The structural backbone that holds all components together. Common materials: Carbon fiber (lightweight & durable).</td>
+                </tr>
+                <tr>
+                    <td><strong>Motors</strong></td>
+                    <td>Provide thrust by spinning propellers. KV rating determines speed and power efficiency.</td>
+                </tr>
+                <tr>
+                    <td><strong>Electronic Speed Controllers (ESCs)</strong></td>
+                    <td>Regulate motor speeds based on flight controller signals.</td>
+                </tr>
+                <tr>
+                    <td><strong>Flight Controller</strong></td>
+                    <td>The drone’s "brain," stabilizing flight using gyroscopes & accelerometers.</td>
+                </tr>
+                <tr>
+                    <td><strong>Battery</strong></td>
+                    <td>Power source. Most FPV drones use LiPo (Lithium Polymer) batteries due to their high discharge rate.</td>
+                </tr>
+                <tr>
+                    <td><strong>FPV Camera</strong></td>
+                    <td>Captures real-time video, enabling immersive piloting.</td>
+                </tr>
+                <tr>
+                    <td><strong>Video Transmitter (VTX)</strong></td>
+                    <td>Broadcasts video signals wirelessly to FPV goggles or monitors.</td>
+                </tr>
+                <tr>
+                    <td><strong>Radio Transmitter & Receiver</strong></td>
+                    <td>Allows remote control of the drone.</td>
+                </tr>
+                <tr>
+                    <td><strong>Antennas</strong></td>
+                    <td>Enhance video and control signal transmission.</td>
+                </tr>
+                <tr>
+                    <td><strong>On-Screen Display (OSD)</strong></td>
+                    <td>Overlays flight telemetry (battery voltage, altitude, speed) onto the FPV feed.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="technology">
+            <h2>FPV Drone Technologies</h2>
+            <h3>1. Video Transmission & Frequencies</h3>
+            <p>FPV drones rely on real-time video transmission. The most common frequencies are:</p>
+            <ul>
+                <li><strong>5.8 GHz:</strong> Most widely used due to high bandwidth and low interference.</li>
+                <li><strong>2.4 GHz:</strong> Offers longer range but is more susceptible to interference.</li>
+                <li><strong>1.2 GHz & 900 MHz:</strong> Used in long-range FPV systems.</li>
+            </ul>
+
+            <h3>2. Flight Modes & Control Systems</h3>
+            <p>FPV drones offer multiple flight modes for different skill levels:</p>
+            <ul>
+                <li><strong>Acro (Manual) Mode:</strong> Gives full control without self-leveling. Preferred for racing and freestyle flying.</li>
+                <li><strong>Angle Mode:</strong> Auto-leveling mode, ideal for beginners.</li>
+                <li><strong>Horizon Mode:</strong> A mix of Acro and Angle mode, allowing flips while maintaining stability.</li>
+            </ul>
+        </section>
+
+        <section id="applications">
+            <h2>Applications of FPV Drones</h2>
+            <ul>
+                <li><strong>Search and Rescue:</strong> Locate missing persons in remote locations.</li>
+                <li><strong>Medical Assistance:</strong> Deliver first-aid kits and emergency supplies.</li>
+                <li><strong>Autonomous Drones:</strong> AI-driven drones for industrial monitoring and delivery.</li>
+                <li><strong>Disaster Relief:</strong> Assess damage post-natural disasters.</li>
+                <li><strong>Aerial Cinematography:</strong> Used in film and content creation.</li>
+            </ul>
+        </section>
+
+        <section id="resources">
+            <h2>References & Further Learning</h2>
+            <ul>
+                <li><a href="https://www.teachengineering.org/populartopics/designprocess" target="_blank">Engineering Design Process</a></li>
+                <li><a href="https://www.sciencebuddies.org/science-fair-projects/engineering-design-process/engineering-design-process-steps" target="_blank">Science Buddies: Engineering Design</a></li>
+                <li><a href="https://oscarliang.com/fpv-drone-frames/" target="_blank">Guide to FPV Drone Frames</a></li>
+                <li><a href="https://www.youtube.com/watch?v=DOWDNBu9DkU" target="_blank">FPV Drone Technologies (YouTube)</a></li>
+            </ul>
+        </section>
+    </main>
+
     <footer>
         <p>© 2025 Research Share Information. All rights reserved.</p>
     </footer>

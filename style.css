@@ -1,3 +1,4 @@
+/* General Styling */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,6 +7,7 @@ body {
     line-height: 1.6; /* Improved readability */
 }
 
+/* Header */
 header {
     background-color: #333;
     color: white;
@@ -13,6 +15,7 @@ header {
     text-align: center;
 }
 
+/* Navigation Bar */
 nav .nav-list {
     list-style-type: none;
     padding: 0;
@@ -37,6 +40,7 @@ nav .nav-list li a:hover {
     color: #ddd; /* Subtle hover effect */
 }
 
+/* Main Section Styling */
 section {
     padding: 20px;
     background-color: white;
@@ -50,27 +54,56 @@ section {
 section h2 {
     color: #333; /* Consistent heading color */
     margin-bottom: 15px; /* Space below headings */
+    border-bottom: 2px solid #333; /* Underline effect for section titles */
+    padding-bottom: 5px;
 }
 
 section p {
     margin: 10px 0; /* Consistent paragraph spacing */
 }
 
-section ul {
-    list-style-type: disc; /* Default bullet style */
-    padding-left: 20px; /* Indent bullets */
-    margin: 10px 0; /* Space around lists */
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1em;
+    text-align: left;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-section ul li {
-    margin-bottom: 10px; /* Space between list items */
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
 }
 
+th {
+    background-color: #333;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* List Styling */
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* Highlight Strong Text */
 strong {
     color: #2c3e50; /* Darker color for emphasis */
-    font-weight: bold; /* Ensure bolding */
+    font-weight: bold;
 }
 
+/* Slide Content (if applicable) */
 #slide-container {
     margin-top: 15px;
     padding: 10px;
@@ -83,6 +116,7 @@ strong {
     color: #555; /* Slightly muted text color */
 }
 
+/* Footer */
 footer {
     text-align: center;
     padding: 10px;
