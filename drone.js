@@ -6,8 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "Slide 2: FPV Technology Overview",
         "Slide 3: Advanced FPV Components"
     ];
-    */
-   
+
     // Target an existing section to append slides (e.g., #overview)
     const slideContainer = document.createElement('div');
     slideContainer.id = 'slide-container';
@@ -27,4 +26,5 @@ document.addEventListener("DOMContentLoaded", function() {
         console.error("Target section not found!");
         document.body.appendChild(slideContainer); // Fallback
     }
+    */
 });
