@@ -1,11 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Define the slides
+    /*
     const slides = [
         "Slide 1: FPV Drone Basics",
         "Slide 2: FPV Technology Overview",
         "Slide 3: Advanced FPV Components"
     ];
-
+    */
+   
     // Target an existing section to append slides (e.g., #overview)
     const slideContainer = document.createElement('div');
     slideContainer.id = 'slide-container';
