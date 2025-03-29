@@ -128,18 +128,18 @@ strong {
 /* Iframe container */
 .iframe-container {
     width: 100%;
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 5px;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Compact iframe */
 .iframe-container iframe {
     width: 100%;
-    height: 650px;
+    height: 600px;
     border: none;
     border-radius: 8px;
 }
