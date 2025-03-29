@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    line-height: 1.6;
+    line-height: 1.6; /* Improved readability */
 }
 
 /* Header */
@@ -25,73 +25,53 @@ nav .nav-list {
 }
 
 nav .nav-list li {
-    margin: 0;
+    margin: 0; /* Remove inline margin since flexbox handles spacing */
 }
 
 nav .nav-list li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    padding: 8px 12px;
-    transition: color 0.3s ease;
+    padding: 8px 12px; /* Clickable area */
+    transition: color 0.3s ease; /* Smooth hover effect */
 }
 
 nav .nav-list li a:hover {
-    color: #ddd;
+    color: #ddd; /* Subtle hover effect */
 }
 
-/* Main Section Styling */
-section {
-    padding: 20px;
+/* Section Styling for FPV Drone Research Proposal */
+.fpv-proposal {
+    padding: 30px; /* Added more padding around the section */
     background-color: white;
     margin: 20px auto;
-    width: 80%;
-    max-width: 1000px;
+    width: 90%; /* Adjust width to fit the content */
+    max-width: 1200px; /* Increased max width for larger iframe */
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
 }
 
-section h2 {
+.fpv-proposal h2 {
     color: #333;
     margin-bottom: 15px;
-    border-bottom: 2px solid #333;
+    border-bottom: 3px solid #333; /* Thicker bottom border for the title */
     padding-bottom: 5px;
 }
 
-section p {
-    margin: 10px 0;
-}
-
-/* Specific Styling for FPV Drone Research Proposal Section */
-.fpv-proposal-section {
-    padding: 30px; /* Extra padding for the section */
-    background-color: white;
-    margin: 20px auto;
-    width: 90%;
-    max-width: 1200px; /* Larger max-width for the FPV Drone Research Proposal */
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Stronger shadow for this section */
-}
-
-.fpv-proposal-section h2 {
-    color: #333;
-    margin-bottom: 15px;
-    border-bottom: 3px solid #333;
-    padding-bottom: 5px;
-}
-
-/* Iframe Styling */
-.fpv-proposal-section .iframe-container {
+/* Iframe Container Adjustments */
+.iframe-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Centers the iframe horizontally */
+    align-items: center; /* Centers the iframe vertically (if needed) */
     width: 100%;
     padding: 0;
+    text-align: center;
 }
 
-.fpv-proposal-section .iframe-container iframe {
-    width: 100%;
-    height: 900px; /* Adjusted height */
+.iframe-container iframe {
+    width: 95%; /* Adjust width to ensure it's centered */
+    max-width: 1100px; /* Ensures it's not too wide */
+    height: 900px; /* Keeps the correct height */
     border: none;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
@@ -101,19 +81,19 @@ section p {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 15px 0;
-    font-size: 0.95em;
+    margin: 15px 0; /* Updated from new CSS, slightly less than original 20px */
+    font-size: 0.95em; /* Slightly smaller for dense content from new CSS */
     text-align: left;
     border-radius: 8px;
-    overflow: hidden;
+    overflow: hidden; /* Keeps rounded corners clean */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 th, td {
-    padding: 10px;
+    padding: 10px; /* Updated from new CSS, reduced from original 12px */
     text-align: left;
     border-bottom: 1px solid #ddd;
-    vertical-align: top;
+    vertical-align: top; /* Align content at top for long lists from new CSS */
 }
 
 th {
@@ -134,15 +114,30 @@ ul li {
     margin-bottom: 10px;
 }
 
+/* Nested Lists */
 section ul ul {
-    list-style-type: circle;
-    padding-left: 20px;
-    margin: 5px 0;
+    list-style-type: circle; /* Differentiate nested lists */
+    padding-left: 20px; /* Indent nested items */
+    margin: 5px 0; /* Reduced spacing for compactness */
 }
 
+/* Highlight Strong Text */
 strong {
-    color: #2c3e50;
+    color: #2c3e50; /* Darker color for emphasis */
     font-weight: bold;
+}
+
+/* Slide Content (if applicable) */
+#slide-container {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f9f9f9; /* Subtle background for slides */
+    border-radius: 4px;
+}
+
+#slide-container p {
+    margin: 5px 0; /* Spacing between slide paragraphs */
+    color: #555; /* Slightly muted text color */
 }
 
 /* Footer */
@@ -159,11 +154,11 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
     nav .nav-list {
-        flex-direction: column;
+        flex-direction: column; /* Stack nav items on small screens */
         gap: 10px;
     }
 
     section {
-        width: 90%;
+        width: 90%; /* Wider on small screens */
     }
 }
