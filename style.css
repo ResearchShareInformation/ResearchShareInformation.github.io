@@ -64,13 +64,18 @@ section p {
 
 /* Specific Styling for FPV Drone Research Proposal Section */
 .fpv-proposal-section {
-    padding: 30px; /* Extra padding for the section */
+    display: flex;
+    flex-direction: column; /* Stack elements */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center content */
+    text-align: center; /* Ensures text stays centered */
+    padding: 30px;
     background-color: white;
     margin: 20px auto;
     width: 90%;
-    max-width: 1200px; /* Larger max-width for the FPV Drone Research Proposal */
+    max-width: 1200px;
     border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Stronger shadow for this section */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 .fpv-proposal-section h2 {
