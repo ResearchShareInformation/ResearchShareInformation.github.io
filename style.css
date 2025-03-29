@@ -62,12 +62,12 @@ section p {
     margin: 10px 0;
 }
 
-/* FPV Proposal Section - Ensures Centering */
+/* Specific Styling for FPV Drone Research Proposal Section */
 .fpv-proposal-section {
     display: flex;
-    flex-direction: column;
-    align-items: center; /* Centers the entire section */
-    text-align: center;
+    flex-direction: column; /* Stack elements */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Ensures text stays centered */
     padding: 30px;
     background-color: white;
     margin: 20px auto;
@@ -81,17 +81,21 @@ section p {
 .fpv-proposal-section .iframe-container {
     display: flex;
     justify-content: center; /* Centers horizontally */
+    align-items: center;
     width: 100%;
+    margin: 0 auto; /* Ensures it's centered */
 }
 
-/* Centers the iframe properly */
+/* Centers and limits iframe width */
 .fpv-proposal-section .iframe-container iframe {
-    width: 90%; /* Prevents full-width stretching */
-    max-width: 1000px; /* Ensures it's centered */
-    height: 900px;
+    width: 90%; /* Prevents it from being too wide */
+    max-width: 1000px; /* Keeps a balanced width */
+    height: 900px; /* Maintains proper height */
     border: none;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    display: block; /* Prevents inline spacing issues */
+    margin: 0 auto; /* Ensures centering */
 }
 
 /* Table Styling */
