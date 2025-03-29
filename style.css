@@ -83,6 +83,9 @@ section p {
     margin-bottom: 15px;
     border-bottom: 3px solid #333;
     padding-bottom: 5px;
+    text-align: left;
+    width: 100%;
+    max-width: 1000px;
 }
 
 /* Iframe Container Styling */
