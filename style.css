@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    line-height: 1.6; /* Improved readability */
+    line-height: 1.6;
 }
 
 /* Header */
@@ -25,19 +25,19 @@ nav .nav-list {
 }
 
 nav .nav-list li {
-    margin: 0; /* Remove inline margin since flexbox handles spacing */
+    margin: 0;
 }
 
 nav .nav-list li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    padding: 8px 12px; /* Clickable area */
-    transition: color 0.3s ease; /* Smooth hover effect */
+    padding: 8px 12px;
+    transition: color 0.3s ease;
 }
 
 nav .nav-list li a:hover {
-    color: #ddd; /* Subtle hover effect */
+    color: #ddd;
 }
 
 /* Main Section Styling */
@@ -46,20 +46,55 @@ section {
     background-color: white;
     margin: 20px auto;
     width: 80%;
-    max-width: 1000px; /* Cap width for large screens */
+    max-width: 1000px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 section h2 {
-    color: #333; /* Consistent heading color */
-    margin-bottom: 15px; /* Space below headings */
-    border-bottom: 2px solid #333; /* Underline effect for section titles */
+    color: #333;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #333;
     padding-bottom: 5px;
 }
 
 section p {
-    margin: 10px 0; /* Consistent paragraph spacing */
+    margin: 10px 0;
+}
+
+/* Specific Styling for FPV Drone Research Proposal Section */
+.fpv-proposal-section {
+    padding: 30px; /* Extra padding for the section */
+    background-color: white;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px; /* Larger max-width for the FPV Drone Research Proposal */
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Stronger shadow for this section */
+}
+
+.fpv-proposal-section h2 {
+    color: #333;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #333;
+    padding-bottom: 5px;
+}
+
+/* Iframe Styling */
+.fpv-proposal-section .iframe-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+}
+
+.fpv-proposal-section .iframe-container iframe {
+    width: 100%;
+    height: 900px; /* Adjusted height */
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
 }
 
 /* Table Styling */
@@ -67,10 +102,10 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin: 15px 0;
-    font-size: 0.95em; /* Slightly smaller for dense content */
+    font-size: 0.95em;
     text-align: left;
     border-radius: 8px;
-    overflow: hidden; /* Keeps rounded corners clean */
+    overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -78,7 +113,7 @@ th, td {
     padding: 10px;
     text-align: left;
     border-bottom: 1px solid #ddd;
-    vertical-align: top; /* Align content at top for long lists */
+    vertical-align: top;
 }
 
 th {
@@ -99,51 +134,16 @@ ul li {
     margin-bottom: 10px;
 }
 
-/* Nested Lists */
 section ul ul {
-    list-style-type: circle; /* Differentiate nested lists */
+    list-style-type: circle;
     padding-left: 20px;
     margin: 5px 0;
 }
 
-/* Highlight Strong Text */
 strong {
     color: #2c3e50;
     font-weight: bold;
 }
-
-/* Slide Content (if applicable) */
-#slide-container {
-    margin-top: 15px;
-    padding: 10px;
-    background-color: #f9f9f9; /* Subtle background for slides */
-    border-radius: 4px;
-}
-
-#slide-container p {
-    margin: 5px 0; /* Spacing between slide paragraphs */
-    color: #555;
-}
-
-/* Iframe container */
-.iframe-container {
-    width: 100%;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 5px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
-}
-
-/* Compact iframe */
-.iframe-container iframe {
-    width: 100%;
-    height: 500px;
-    border: none;
-    border-radius: 8px;
-}
-
 
 /* Footer */
 footer {
@@ -159,15 +159,11 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
     nav .nav-list {
-        flex-direction: column; /* Stack nav items on small screens */
+        flex-direction: column;
         gap: 10px;
     }
 
     section {
-        width: 90%; /* Wider on small screens */
-    }
-
-    .iframe-container {
         width: 90%;
     }
 }
