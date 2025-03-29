@@ -128,20 +128,20 @@ strong {
 /* Iframe container */
 .iframe-container {
     width: 100%;
-    max-width: 1000px; /* Slightly smaller width */
-    margin: 0 auto; /* Centers the iframe */
-    padding: 10px; /* Less padding for a tighter fit */
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 8px;
     border-radius: 8px;
-    overflow: hidden; /* Ensures rounded corners apply */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    overflow: hidden;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Compact iframe */
+/* More compact iframe */
 .iframe-container iframe {
     width: 100%;
-    height: 750px; /* Slightly smaller height */
+    height: 700px;
     border: none;
-    border-radius: 8px; /* Rounded edges to match section styling */
+    border-radius: 8px;
 }
 
 /* Footer */
