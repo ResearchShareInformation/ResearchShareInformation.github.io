@@ -66,8 +66,8 @@ section p {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 15px 0; /* Updated from new CSS, slightly less than original 20px */
-    font-size: 0.95em; /* Slightly smaller for dense content from new CSS */
+    margin: 15px 0;
+    font-size: 0.95em; /* Slightly smaller for dense content */
     text-align: left;
     border-radius: 8px;
     overflow: hidden; /* Keeps rounded corners clean */
@@ -75,10 +75,10 @@ table {
 }
 
 th, td {
-    padding: 10px; /* Updated from new CSS, reduced from original 12px */
+    padding: 10px;
     text-align: left;
     border-bottom: 1px solid #ddd;
-    vertical-align: top; /* Align content at top for long lists from new CSS */
+    vertical-align: top; /* Align content at top for long lists */
 }
 
 th {
@@ -102,13 +102,13 @@ ul li {
 /* Nested Lists */
 section ul ul {
     list-style-type: circle; /* Differentiate nested lists */
-    padding-left: 20px; /* Indent nested items */
-    margin: 5px 0; /* Reduced spacing for compactness */
+    padding-left: 20px;
+    margin: 5px 0;
 }
 
 /* Highlight Strong Text */
 strong {
-    color: #2c3e50; /* Darker color for emphasis */
+    color: #2c3e50;
     font-weight: bold;
 }
 
@@ -122,24 +122,24 @@ strong {
 
 #slide-container p {
     margin: 5px 0; /* Spacing between slide paragraphs */
-    color: #555; /* Slightly muted text color */
+    color: #555;
 }
 
-/* Center the iframe */
+/* Center the iframe and adjust its size */
 .iframe-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
+    max-width: 1000px; /* Matches section width */
+    margin: 0 auto; /* Centers the iframe */
+    border-radius: 8px;
+    overflow: hidden; /* Ensures rounded corners apply */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .iframe-container iframe {
-    width: 80%;
-    max-width: 900px;
-    height: 700px;
+    width: 100%;
+    height: 800px; /* Increased height for better view */
     border: none;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* Rounded edges to match section styling */
 }
 
 /* Footer */
@@ -162,5 +162,9 @@ footer {
 
     section {
         width: 90%; /* Wider on small screens */
+    }
+
+    .iframe-container {
+        width: 90%;
     }
 }
