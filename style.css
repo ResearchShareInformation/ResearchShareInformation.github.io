@@ -125,9 +125,17 @@ strong {
     color: #555; /* Slightly muted text color */
 }
 
-/* Embedded Google Docs Styling */
-iframe {
+/* Center the iframe */
+.iframe-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+}
+
+.iframe-container iframe {
+    width: 80%;
+    max-width: 900px;
     height: 700px;
     border: none;
     border-radius: 8px;
