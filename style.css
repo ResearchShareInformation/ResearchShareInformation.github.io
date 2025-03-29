@@ -1,10 +1,15 @@
 /* General Styling */
-body {
-    font-family: Arial, sans-serif;
+html, body {
     margin: 0;
     padding: 0;
+    height: 100%; /* Ensures the body takes up the full height of the page */
     background-color: #f4f4f4;
-    line-height: 1.6; /* Improved readability */
+    font-family: Arial, sans-serif;
+}
+
+/* Header and Footer (optional: hides header and footer for this page) */
+header, footer {
+    display: none; /* Optional: hides header and footer */
 }
 
 /* Header */
@@ -66,8 +71,8 @@ section p {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 15px 0;
-    font-size: 0.95em; /* Slightly smaller for dense content */
+    margin: 15px 0; /* Updated from new CSS, slightly less than original 20px */
+    font-size: 0.95em; /* Slightly smaller for dense content from new CSS */
     text-align: left;
     border-radius: 8px;
     overflow: hidden; /* Keeps rounded corners clean */
@@ -75,10 +80,10 @@ table {
 }
 
 th, td {
-    padding: 10px;
+    padding: 10px; /* Updated from new CSS, reduced from original 12px */
     text-align: left;
     border-bottom: 1px solid #ddd;
-    vertical-align: top; /* Align content at top for long lists */
+    vertical-align: top; /* Align content at top for long lists from new CSS */
 }
 
 th {
@@ -102,13 +107,13 @@ ul li {
 /* Nested Lists */
 section ul ul {
     list-style-type: circle; /* Differentiate nested lists */
-    padding-left: 20px;
-    margin: 5px 0;
+    padding-left: 20px; /* Indent nested items */
+    margin: 5px 0; /* Reduced spacing for compactness */
 }
 
 /* Highlight Strong Text */
 strong {
-    color: #2c3e50;
+    color: #2c3e50; /* Darker color for emphasis */
     font-weight: bold;
 }
 
@@ -122,28 +127,27 @@ strong {
 
 #slide-container p {
     margin: 5px 0; /* Spacing between slide paragraphs */
-    color: #555;
+    color: #555; /* Slightly muted text color */
 }
 
-/* Iframe container */
+/* Center the iframe */
 .iframe-container {
     width: 100%;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 5px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    height: 100vh; /* 100% of viewport height */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centers the iframe */
+    align-items: center; /* Centers the iframe vertically */
+    overflow: hidden; /* Prevents any overflow */
 }
 
-/* Compact iframe */
 .iframe-container iframe {
     width: 100%;
-    height: 500px;
+    height: 100%; /* Fills the entire container */
     border: none;
-    border-radius: 8px;
+    border-radius: 0;
 }
-
 
 /* Footer */
 footer {
@@ -165,9 +169,5 @@ footer {
 
     section {
         width: 90%; /* Wider on small screens */
-    }
-
-    .iframe-container {
-        width: 90%;
     }
 }
