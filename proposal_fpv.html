@@ -7,19 +7,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Static Header -->
-    <header>
-        <h1>Offline AI & Model Distillation</h1>
-        <nav>
-            <ul class="nav-list">
-                <li><a href="./">Home</a></li>
-                <li><a href="ai.html">AI Learning</a></li>
-                <li><a href="fpv.html">FPV Drone</a></li>
-                <li><a href="proposal_ai.html">AI Learning Proposal</a></li>
-                <li><a href="proposal_fpv.html">FPV Proposal</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div id="header-placeholder"></div>
+
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+    </script>
 
     <main>
         <section>
@@ -29,5 +25,9 @@
             </div>
         </section>
     </main>
+
+    <footer>
+        <p>&copy; 2025 Research Share Information. All rights reserved.</p>
+    </footer>
 </body>
 </html>
