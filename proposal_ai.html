@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepSeek Distillation Proposal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+    </script>
+
+    <main>
+        <section class="deepseek-proposal-section">
+            <div class="iframe-container">
+                <iframe src="https://docs.google.com/document/d/e/2PACX-1vQ-Lc3t-BJtxPp0gji0m7hphJGtt6pRkq0zkAcZKYbPWTlcCXI2Cg36SUfjlnqirrRHBe_7g5Ma_WPb/pub?embedded=true"></iframe>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
